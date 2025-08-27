@@ -19,13 +19,13 @@ The app consists of a fake backend server that stores the todo's and an angular 
     ```
 2. Install dependencies:
     ```bash
-    npm install-all
+    npm run install-all
     ```
 3. Run the frontend:
     ```bash
-    npm start-frontend
+    npm run start-frontend
     ```
 4. Run the backend server:
     ```bash
-    npm start-backend
+    npm run start-backend
     ```
