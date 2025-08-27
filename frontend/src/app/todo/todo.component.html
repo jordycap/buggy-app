@@ -1,0 +1,16 @@
+<div class="todo-app">
+  <h2>Todo List</h2>
+  <form (submit)="addTodo(); $event.preventDefault()">
+    <input [(ngModel)]="newTitle" name="newTitle" placeholder="Add todo..." />
+    <button type="submit">Add</button>
+  </form>
+  <ul>
+    @for (todo of todos; track todo.id) {
+        <li>
+            <input type="checkbox" [checked]="todo.completed" (change)="toggleTodo(todo)" />
+           <span [class.completed]="todo.completed">{{ todo.title }}</span> 
+           <button (click)="deleteTodo(todo.id)">x</button>
+        </li>
+    }
+  </ul>
+</div>
