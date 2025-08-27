@@ -1,10 +1,16 @@
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
+import express from 'express';
+import fs from 'fs';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import cors from 'cors';
 const app = express();
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const TODOS_FILE = path.join(__dirname, 'todos.json');
 
 function readTodos() {

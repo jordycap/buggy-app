@@ -1,30 +1,248 @@
+$light-bg: #fafafa;
+$light-card: #ffffff;
+$light-text: #222222;
+$dark-bg: #181824;
+$dark-card: #23234a;
+$dark-text: #eaeaea;
+$primary: #a259f7;
+
 .todo-app {
-  max-width: 400px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 60px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+
+  &.light {
+    background: linear-gradient(135deg, #fafafa 0%, #eaeaea 100%);
+    color: $light-text;
+
+    .todo-card {
+      background: $light-card;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+      .todo-input {
+        background: $light-bg;
+        color: $light-text;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .todo-text { color: $light-text; }
+    }
+
+    .todo-list li {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      .todo-text { color: $light-text; }
+      .remove-btn { color: $primary; }
+    }
+
+    .todo-footer {
+      color: $light-text;
+      .filters button {
+        color: $light-text;
+        &.active { background: $primary; color: #fff; box-shadow: 0 4px 8px rgba($primary, 0.3); }
+        &:hover { background: #333; color: #fff; }
+      }
+      .clear-btn { color: $primary; font-weight: 600; }
+    }
+
+    .header{
+        .theme-switch {
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+    }
+    h1{
+      color: $light-text;
+    }
+  }
+
+  &.dark {
+    background: linear-gradient(135deg, #23234a 0%, #181824 100%);
+    color: $dark-text;
+
+    .todo-card {
+      background: $dark-card;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+      .todo-input {
+        background: $dark-bg;
+        color: $dark-text;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      .todo-text { color: $dark-text; }
+    }
+
+    .todo-list li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      .todo-text { color: $dark-text; }
+      .remove-btn { color: $primary; }
+    }
+
+    .todo-footer {
+      color: $dark-text;
+      .filters button {
+        color: $dark-text;
+        &.active { background: $primary; color: #fff; box-shadow: 0 4px 8px rgba($primary, 0.6); }
+        &:hover { background: #444; color: #fff; }
+      }
+      .clear-btn { color: $primary; font-weight: 600; }
+    }
+  }
+
+  .header{
+        .theme-switch {
+          box-shadow: 0 4px 12px rgba(225,225,225,0.1);
+        }
+    }
+        h1{
+      color: $dark-text;
+    }
 }
-h2 {
-  text-align: center;
+
+/* Header and Theme Switch */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-bottom: 30px;
+  position: relative;
+
+  h1 {
+    letter-spacing: 0.3em;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-right: 16px;
+    color: #fff;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+
+  .theme-switch {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+    position: absolute;
+    right: 48px;
+    top: 48px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
-input[type="text"] {
-  width: 70%;
-  padding: 0.5rem;
-  margin-right: 0.5rem;
+
+/* Todo Card */
+.todo-card {
+  border-radius: 16px;
+  padding: 32px 24px 16px 24px;
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: all 0.3s ease;
+
+  .todo-input {
+    padding: 18px 24px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+  }
 }
-button {
-  padding: 0.5rem 1rem;
-}
-ul {
+
+/* Todo List */
+.todo-list {
   list-style: none;
   padding: 0;
+  margin: 0 0 18px 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 18px 0;
+    transition: all 0.3s ease;
+
+    &.completed .todo-text {
+      text-decoration: line-through;
+      opacity: 0.6;
+      color: #888;
+    }
+
+    .checkbox-container {
+      position: relative;
+      margin-right: 18px;
+
+      input[type="checkbox"] {
+        accent-color: $primary;
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    .todo-text {
+      flex: 1;
+      font-size: 1.2rem;
+    }
+
+    .remove-btn {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      margin-left: 12px;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
 }
-li {
-  margin: 0.5rem 0;
-}
-.completed {
-  text-decoration: line-through;
-  color: #888;
+
+/* Footer */
+.todo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-top: 12px;
+
+  .filters {
+    display: flex;
+    gap: 12px;
+
+    button {
+      background: none;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.2s;
+
+      &.active {
+        background: $primary;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba($primary, 0.5);
+      }
+
+      &:hover {
+        background: #333;
+        color: #fff;
+      }
+    }
+
+    .clear-btn {
+      font-weight: 600;
+    }
+  }
 }
