@@ -1,6 +1,7 @@
 # Buggy App
 
 A simple todo application, deliberately filled with bugs for testing purposes.
+The app consists of a fake backend server that stores the todo's and an angular 20 frontend
 
 ## Features
 
@@ -18,17 +19,13 @@ A simple todo application, deliberately filled with bugs for testing purposes.
     ```
 2. Install dependencies:
     ```bash
-    npm install
+    npm install-all
     ```
-3. Run the app:
+3. Run the frontend:
     ```bash
-    npm start
+    npm start-frontend
     ```
-
-## Contributing
-
-Contributions are welcome! Please open issues or submit pull requests.
-
-## License
-
-This project is licensed under the MIT License.
+4. Run the backend server:
+    ```bash
+    npm start-backend
+    ```
