@@ -1,17 +1,42 @@
 [
-  {
-    "id": 2,
-    "title": "title 1",
-    "completed": true
-  },
-  {
-    "id": 5,
-    "title": "title 4",
-    "completed": true
-  },
-  {
-    "id": 6,
-    "title": "title 5",
-    "completed": true
-  }
+    {
+        "id": 1,
+        "title": "Buy groceries for the week",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "title": "Finish project report",
+        "completed": false
+      },
+      {
+        "id": 3,
+        "title": "Call the plumber",
+        "completed": true
+      },
+      {
+        "id": 4,
+        "title": "Schedule dentist appointment",
+        "completed": false
+      },
+      {
+        "id": 7,
+        "title": "Read 20 pages of a book",
+        "completed": false
+      },
+      {
+        "id": 8,
+        "title": "Clean the living room",
+        "completed": true
+      },
+      {
+        "id": 9,
+        "title": "Reply to important emails",
+        "completed": false
+      },
+      {
+        "id": 10,
+        "title": "Prepare dinner",
+        "completed": true
+      }
 ]

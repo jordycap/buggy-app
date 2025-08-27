@@ -1,0 +1,21 @@
+{
+  "name": "buggy-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "cd frontend && npm ci && cd ../backend && npm ci",
+    "start-frontend": "cd frontend && ng serve",
+    "start-backend": "cd backend && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordycap/buggy-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordycap/buggy-app/issues"
+  },
+  "homepage": "https://github.com/jordycap/buggy-app#readme"
+}
