@@ -1,17 +1,16 @@
 
 <div class="todo-app" [ngClass]="theme">
   <div class="header">
-    <h1>Todo list</h1>
 
-    <button class="theme-switch" (click)="toggleTheme()">
-    @if(theme === 'dark') {
-        <span>🌙</span>
-    } @else {
-        <span>☀️</span>
-    }
-    </button>
-
-  </div>
+      
+</div>
+<button class="theme-switch" (click)="toggleTheme()">
+@if(theme === 'dark') {
+    <span>🌙</span>
+} @else {
+    <span>☀️</span>
+}
+</button>
   <div class="todo-card">
     <input class="todo-input" [(ngModel)]="todoTitle" name="todoTitle" placeholder="Create a new todo..." (keyup.enter)="addTodo()" />
     <ul class="todo-list">

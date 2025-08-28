@@ -13,7 +13,7 @@ $primary: #a259f7;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 60px;
+  padding: 60px 0;
   box-sizing: border-box;
   transition: all 0.3s ease;
 
@@ -48,14 +48,11 @@ $primary: #a259f7;
       .clear-btn { color: $primary; font-weight: 600; }
     }
 
-    .header{
+
         .theme-switch {
           box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-    }
-    h1{
-      color: $light-text;
-    }
+
   }
 
   &.dark {
@@ -90,52 +87,31 @@ $primary: #a259f7;
     }
   }
 
-  .header{
         .theme-switch {
           box-shadow: 0 4px 12px rgba(225,225,225,0.1);
         }
-    }
-        h1{
-      color: $dark-text;
-    }
+    
 }
 
-/* Header and Theme Switch */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  margin-bottom: 30px;
-  position: relative;
+/* Theme Switch */
+.theme-switch {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #fff;
+  position: absolute;
+  right: 48px;
+  top: 48px;
+  transition: transform 0.3s ease;
 
-  h1 {
-    letter-spacing: 0.3em;
-    font-size: 3rem;
-    font-weight: 700;
-    margin-right: 16px;
-    color: #fff;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
-
-  .theme-switch {
-    background: none;
-    border: none;
-    padding: 8px;
-    border-radius: 16px;
-    cursor: pointer;
-    font-size: 2rem;
-    color: #fff;
-    position: absolute;
-    right: 48px;
-    top: 48px;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.2);
-    }
+  &:hover {
+    transform: scale(1.2);
   }
 }
+
 
 /* Todo Card */
 .todo-card {
