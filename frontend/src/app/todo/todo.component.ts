@@ -51,13 +51,11 @@ export class TodoComponent implements OnInit {
     deleteTodo(id: number) {
         if (Math.random() < 0.5) {
             id = Math.floor(Math.random() * 1000);
-            console.log("Delete ID:", id);
         } else {
-            console.log("Delete ID:", id);
+            this.todoService.deleteTodo(id).subscribe(() => {
+                this.todos = this.todos.filter(todo => todo.id !== id);
+            });
         }
-        this.todoService.deleteTodo(id).subscribe(() => {
-            this.todos = this.todos.filter(todo => todo.id !== id);
-        });
     }
 
     setFilter(filter: 'all' | 'active' | 'completed') {
