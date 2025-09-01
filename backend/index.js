@@ -22,13 +22,12 @@ function writeTodos(todos) {
 }
 // Get all todos
 app.get('/api/todos', async (req, res) => {
-	try {
-    	const todos = await readTodos();
+  try {
+    const todos = readTodos(); // no need for await since it's synchronous
     res.json(todos);
   } catch (err) {
     res.status(500).json({ error: 'Failed to read todos' });
   }
-	res.json(readTodos())
 });
 
 // Add a new todo
