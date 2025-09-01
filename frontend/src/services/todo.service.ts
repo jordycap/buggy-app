@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Todo } from '../components/todo/todo.component';
 
 @Injectable({ providedIn: 'root' })
@@ -11,37 +10,18 @@ export class TodoService {
     constructor(private http: HttpClient) { }
 
     getTodos(): Observable<Todo[]> {
-        return this.http.get<Todo[]>(this.apiUrl).pipe(
-            catchError(this.handleError<Todo[]>('getTodos'))
-        );
+        return this.http.get<Todo[]>(this.apiUrl);
     }
 
     addTodo(title: string): Observable<Todo> {
-        return this.http.post<Todo>(this.apiUrl, { title }).pipe(
-            catchError(this.handleError<Todo>('addTodo'))
-        );
+        return this.http.post<Todo>(this.apiUrl, { title });
     }
 
     deleteTodo(id: number): Observable<void> {
-        return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
-            catchError(this.handleError<void>('deleteTodo'))
-        );
+        return this.http.delete<void>(`${this.apiUrl}/${id}`);
     }
 
     updateTodo(todo: Todo): Observable<Todo> {
-        return this.http.put<Todo>(`${this.apiUrl}/${todo.id}`, todo).pipe(
-            catchError(this.handleError<Todo>('updateTodo'))
-        );
-    }
-
-    /** Generic error handler */
-    private handleError<T>(operation = 'operation') {
-        return (error: any): Observable<T> => {
-            console.error(`${operation} failed:`, error);
-
-            const message = error.error?.message || error.statusText || 'An unknown error occurred';
-
-            return throwError(() => new Error(message));
-        };
+        return this.http.put<Todo>(`${this.apiUrl}/${todo.id}`, todo);
     }
 }
