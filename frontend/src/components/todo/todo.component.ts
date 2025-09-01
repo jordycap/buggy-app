@@ -34,7 +34,6 @@ export class TodoComponent implements OnInit {
     }
 
     addTodo() {
-        if (!this.todoTitle.trim()) return;
         this.todoService.addTodo(this.todoTitle).subscribe((todo: Todo) => {
             this.todos.push(todo);
             this.todoTitle = '';
