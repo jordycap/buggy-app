@@ -17,9 +17,11 @@ function readTodos() {
 	const data = fs.readFileSync(TODOS_FILE, 'utf8');
 	return JSON.parse(data);
 }
+
 function writeTodos(todos) {
 	fs.writeFileSync(TODOS_FILE, JSON.stringify(todos, null, 2));
 }
+
 // Get all todos
 app.get('/api/todos', async (req, res) => {
   try {
