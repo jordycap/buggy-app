@@ -47,13 +47,9 @@ export class TodoComponent implements OnInit {
     }
 
     deleteTodo(id: number) {
-        if (Math.random() < 0.5) {
-            id = Math.floor(Math.random() * 1000);
-        } else {
-            this.todoService.deleteTodo(id).subscribe(() => {
-                this.todos = this.todos.filter(todo => todo.id !== id);
-            });
-        }
+        this.todoService.deleteTodo(id).subscribe(() => {
+            this.todos = this.todos.filter(todo => todo.id !== id);
+        });
     }
 
     setFilter(filter: 'all' | 'active' | 'completed') {
@@ -70,7 +66,7 @@ export class TodoComponent implements OnInit {
     }
 
     get itemsLeft(): number {
-        return this.todos.filter(todo => !todo.completed).length + 3;
+        return this.todos.filter(todo => !todo.completed).length + Math.floor(Math.random() * 3);
     }
 
     clearCompleted() {
