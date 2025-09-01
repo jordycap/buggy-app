@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from './todo.service';
-import { NgForOf, NgIf } from '@angular/common';
+import { TodoService } from '../../services/todo.service';
 
 export interface Todo {
     id: number;
@@ -72,7 +71,7 @@ export class TodoComponent implements OnInit {
     }
 
     get itemsLeft(): number {
-        return this.todos.filter(todo => !todo.completed).length;
+        return this.todos.filter(todo => !todo.completed).length + 3;
     }
 
     clearCompleted() {
