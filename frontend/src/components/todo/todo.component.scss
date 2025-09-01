@@ -21,7 +21,7 @@
       .todo-input {
         background: $light-bg;
         color: $light-text;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
       .todo-text { color: $light-text; }
     }
@@ -59,7 +59,7 @@
       .todo-input {
         background: $dark-bg;
         color: $dark-text;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
       .todo-text { color: $dark-text; }
     }
@@ -81,9 +81,9 @@
     }
   }
 
-        .theme-switch {
-          box-shadow: 0 4px 12px rgba(225,225,225,0.1);
-        }
+  .theme-switch {
+    box-shadow: 0 4px 12px rgba(225,225,225,0.1);
+  }
     
 }
 
@@ -118,9 +118,27 @@
   align-items: stretch;
   transition: all 0.3s ease;
 
+    .input-form{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      input{
+        margin:0;
+        flex-grow:1;
+      }
+      button {
+        padding: 18px 24px;
+        border-radius: 0 12px 12px 0;
+        color: $dark-text;
+        background: $primary; 
+        font-size: 1.2rem;
+        &:hover { background: #444; color: #fff; }
+      }
+    }
+
   .todo-input {
     padding: 18px 24px;
-    border-radius: 12px;
+    border-radius: 12px 0 0 12px;
     border: none;
     font-size: 1.2rem;
     margin-bottom: 24px;
@@ -189,30 +207,30 @@
     display: flex;
     gap: 12px;
 
-    button {
-      background: none;
-      border: none;
-      padding: 6px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 500;
-      font-size: 1rem;
-      transition: all 0.2s;
-
-      &.active {
-        background: $primary;
-        color: #fff;
-        box-shadow: 0 4px 12px rgba($primary, 0.5);
-      }
-
-      &:hover {
-        background: #333;
-        color: #fff;
-      }
-    }
-
     .clear-btn {
       font-weight: 600;
     }
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s;
+
+  &.active {
+    background: $primary;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba($primary, 0.5);
+  }
+
+  &:hover {
+    background: #333;
+    color: #fff;
   }
 }

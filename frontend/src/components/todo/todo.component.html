@@ -8,7 +8,10 @@
     }
   </button>
   <div class="todo-card">
-    <input class="todo-input" [(ngModel)]="todoTitle" name="todoTitle" placeholder="Create a new todo..." (keyup.enter)="addTodo()" />
+    <form class="input-form" (submit)="addTodo()">
+      <input class="todo-input" [(ngModel)]="todoTitle" name="todoTitle" placeholder="Create a new todo..."  />
+      <button>+</button>
+    </form>
     @if(filteredTodos.length > 0) {
       <ul class="todo-list">
           @for (todo of filteredTodos; track todo.id) {
