@@ -6,7 +6,7 @@ import { TodoComponent } from '../components/todo/todo.component';
   selector: 'app-root',
   imports: [RouterOutlet, TodoComponent],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('buggy-app-frontend');

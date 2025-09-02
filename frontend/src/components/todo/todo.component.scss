@@ -23,30 +23,44 @@
         color: $light-text;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
-      .todo-text { color: $light-text; }
+      .todo-text {
+        color: $light-text;
+      }
     }
 
     .todo-list li {
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      .todo-text { color: $light-text; }
-      .remove-btn { color: $primary; }
+      .todo-text {
+        color: $light-text;
+      }
+      .remove-btn {
+        color: $primary;
+      }
     }
 
     .todo-footer {
       color: $light-text;
       .filters button {
         color: $light-text;
-        &.active { background: $primary; color: #fff; box-shadow: 0 4px 8px rgba($primary, 0.3); }
-        &:hover { background: #333; color: #fff; }
+        &.active {
+          background: $primary;
+          color: #fff;
+          box-shadow: 0 4px 8px rgba($primary, 0.3);
+        }
+        &:hover {
+          background: #333;
+          color: #fff;
+        }
       }
-      .clear-btn { color: $primary; font-weight: 600; }
+      .clear-btn {
+        color: $primary;
+        font-weight: 600;
+      }
     }
 
-
-        .theme-switch {
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
+    .theme-switch {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
   }
 
   &.dark {
@@ -61,30 +75,45 @@
         color: $dark-text;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
-      .todo-text { color: $dark-text; }
+      .todo-text {
+        color: $dark-text;
+      }
     }
 
     .todo-list li {
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      .todo-text { color: $dark-text; }
-      .remove-btn { color: $primary; }
+      .todo-text {
+        color: $dark-text;
+      }
+      .remove-btn {
+        color: $primary;
+      }
     }
 
     .todo-footer {
       color: $dark-text;
       .filters button {
         color: $dark-text;
-        &.active { background: $primary; color: #fff; box-shadow: 0 4px 8px rgba($primary, 0.6); }
-        &:hover { background: #444; color: #fff; }
+        &.active {
+          background: $primary;
+          color: #fff;
+          box-shadow: 0 4px 8px rgba($primary, 0.6);
+        }
+        &:hover {
+          background: #444;
+          color: #fff;
+        }
       }
-      .clear-btn { color: $primary; font-weight: 600; }
+      .clear-btn {
+        color: $primary;
+        font-weight: 600;
+      }
     }
   }
 
   .theme-switch {
-    box-shadow: 0 4px 12px rgba(225,225,225,0.1);
+    box-shadow: 0 4px 12px rgba(225, 225, 225, 0.1);
   }
-    
 }
 
 /* Theme Switch */
@@ -106,7 +135,6 @@
   }
 }
 
-
 /* Todo Card */
 .todo-card {
   border-radius: 16px;
@@ -118,23 +146,26 @@
   align-items: stretch;
   transition: all 0.3s ease;
 
-    .input-form{
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      input{
-        margin:0;
-        flex-grow:1;
-      }
-      button {
-        padding: 18px 24px;
-        border-radius: 0 12px 12px 0;
-        color: $dark-text;
-        background: $primary; 
-        font-size: 1.2rem;
-        &:hover { background: #444; color: #fff; }
+  .input-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    input {
+      margin: 0;
+      flex-grow: 1;
+    }
+    button {
+      padding: 18px 24px;
+      border-radius: 0 12px 12px 0;
+      color: $dark-text;
+      background: $primary;
+      font-size: 1.2rem;
+      &:hover {
+        background: #444;
+        color: #fff;
       }
     }
+  }
 
   .todo-input {
     padding: 18px 24px;
@@ -168,7 +199,7 @@
       position: relative;
       margin-right: 18px;
 
-      input[type="checkbox"] {
+      input[type='checkbox'] {
         accent-color: $primary;
         width: 22px;
         height: 22px;

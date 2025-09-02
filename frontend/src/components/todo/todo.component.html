@@ -1,39 +1,46 @@
-
 <div class="todo-app" [ngClass]="theme">
   <button class="theme-switch" (click)="toggleTheme()">
-    @if(theme === 'dark') {
-        <span>🌙</span>
+    @if (theme === 'dark') {
+      <span>🌙</span>
     } @else {
-        <span>☀️</span>
+      <span>☀️</span>
     }
   </button>
   <div class="todo-card">
     <form class="input-form" (submit)="addTodo()">
-      <input class="todo-input" [(ngModel)]="todoTitle" name="todoTitle" placeholder="Create a new todo..."  />
+      <input
+        class="todo-input"
+        [(ngModel)]="todoTitle"
+        name="todoTitle"
+        placeholder="Create a new todo..."
+      />
       <button>+</button>
     </form>
-    @if(filteredTodos.length > 0) {
+    @if (filteredTodos.length > 0) {
       <ul class="todo-list">
-          @for (todo of filteredTodos; track todo.id) {
-              <li [ngClass]="{completed: todo.completed}">
-                <label class="checkbox-container">
-                  <input type="checkbox" [checked]="todo.completed" (change)="toggleTodo(todo)" />
-                </label>
-                <span class="todo-text">{{ todo.title }}</span>
-                <button class="remove-btn" (click)="deleteTodo(todo.id)">×</button>
-              </li>
-          }
+        @for (todo of filteredTodos; track todo.id) {
+          <li [ngClass]="{ completed: todo.completed }">
+            <label class="checkbox-container">
+              <input type="checkbox" [checked]="todo.completed" (change)="toggleTodo(todo)" />
+            </label>
+            <span class="todo-text">{{ todo.title }}</span>
+            <button class="remove-btn" (click)="deleteTodo(todo.id)">×</button>
+          </li>
+        }
       </ul>
-    }
-    @else {
-      <p class="no-todos">No todos available for filtertype {{filter}}. Add a new todo!</p>
+    } @else {
+      <p class="no-todos">No todos available for filtertype {{ filter }}. Add a new todo!</p>
     }
     <div class="todo-footer">
       <span>{{ itemsLeft }} items left</span>
       <div class="filters">
-        <button [ngClass]="{active: filter === 'all'}" (click)="filter='all'">All</button>
-        <button [ngClass]="{active: filter === 'active'}" (click)="filter='active'">Active</button>
-        <button [ngClass]="{active: filter === 'completed'}" (click)="filter='completed'">Completed</button>
+        <button [ngClass]="{ active: filter === 'all' }" (click)="filter = 'all'">All</button>
+        <button [ngClass]="{ active: filter === 'active' }" (click)="filter = 'active'">
+          Active
+        </button>
+        <button [ngClass]="{ active: filter === 'completed' }" (click)="filter = 'completed'">
+          Completed
+        </button>
         <button class="clear-btn" (click)="clearCompleted()">Clear Completed</button>
       </div>
     </div>
