@@ -65,8 +65,9 @@ export class TodoComponent implements OnInit {
         return this.todos;
     }
 
+    private randomOffset = Math.floor(Math.random() * 3);
     get itemsLeft(): number {
-        return this.todos.filter(todo => !todo.completed).length + Math.floor(Math.random() * 3);
+        return this.todos.filter(todo => !todo.completed).length + this.randomOffset;
     }
 
     clearCompleted() {
