@@ -30,16 +30,6 @@ The app consists of a fake backend server that stores the todo's and an angular 
    npm run start-backend
    ```
 
-## Known Bugs (Intentional)
-
-This app intentionally includes several quirks to simulate a “buggy” experience:
-
-- **Incorrect item count:** The “items left” counter may not always reflect the true number of incomplete todos.
-- **Delete failures:** Deleting a todo can fail randomly, roughly 50% of the time.
-- **Fetching issues:** Loading the todo list may fail about 40% of the time.
-- **Add todo glitches:** Occasionally, adding a new todo will result in an incorrect title.
-- **Delete inconsistencies:** Sometimes deleting a todo removes the wrong item.
-- **Update inconsistencies:** Updating a todo can sometimes modify the wrong todo.
 
 ## Unknown Bugs
 
